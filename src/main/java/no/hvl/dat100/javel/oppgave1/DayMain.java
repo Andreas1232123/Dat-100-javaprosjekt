@@ -12,9 +12,24 @@ public class DayMain {
         double[] powerprices_day = DayPowerData.powerprices_day;
 
         System.out.println("==============");
-        System.out.println("OPPGAVE 1");
+        System.out.println("OPPGAVE 1a");
         System.out.println("==============");
         System.out.println();
+        DailyPower.printPowerPrices(powerprices_day);
+        System.out.println("==============");
+        System.out.println("OPPGAVE 1b");
+        System.out.println("==============");
+        System.out.println();
+        DailyPower.printPowerUsage(powerusage_day);
+        System.out.println("==============");
+        System.out.println("OPPGAVE 1c");
+        System.out.println("==============");
+        System.out.println(DailyPower.computePowerUsage(powerusage_day));
+        System.out.println("==============");
+        System.out.println("OPPGAVE 1d");
+        System.out.println("==============");
+        System.out.println(DailyPower.computeSpotPrice(powerusage_day, powerprices_day));
+        
 
         /*
         TODO

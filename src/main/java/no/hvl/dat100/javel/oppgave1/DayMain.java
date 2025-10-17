@@ -29,15 +29,32 @@ public class DayMain {
         System.out.println("OPPGAVE 1d");
         System.out.println("==============");
         System.out.println(DailyPower.computeSpotPrice(powerusage_day, powerprices_day));
+        System.out.println("==============");
+        System.out.println("OPPGAVE 1e");
+        System.out.println("==============");
+        double powerHour =powerusage_day[7];
+        double powerPrice =powerprices_day[7];
+        double time=(DailyPower.getSupport(powerHour,powerPrice));
+        System.out.println(time);
+        System.out.println("==============");
+        System.out.println("OPPGAVE 1f");
+        System.out.println("==============");
+        System.out.println(DailyPower.computePowerSupport(powerusage_day, powerprices_day));
+        System.out.println("==============");
+        System.out.println("OPPGAVE 1g");
+        System.out.println("==============");
+        System.out.println(DailyPower.computeNorgesPrice(powerusage_day));
+        System.out.println("==============");
+        System.out.println("OPPGAVE 1h");
+        System.out.println("==============");
+        System.out.println(DailyPower.findPeakUsage(powerusage_day));
+        System.out.println("==============");
+        System.out.println("OPPGAVE 1i");
+        System.out.println("==============");
+        double averageusage=(DailyPower.findAvgPower(powerusage_day));
+        System.out.println(averageusage);
         
 
-        /*
-        TODO
-
-         Write code that tests the methods you implement in the DailyPower class
-         Remember to teste the methods as you implement them
-         Remember to also to check that you get the expected results
-         */
 
     }
 }

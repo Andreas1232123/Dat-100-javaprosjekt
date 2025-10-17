@@ -1,5 +1,7 @@
 package no.hvl.dat100.javel.oppgave1;
 
+import jdk.jfr.Threshold;
+
 public class DailyPower {
 
     // a) print power prices during a day
@@ -41,12 +43,13 @@ public class DailyPower {
     private static final double THRESHOLD = 0.9375;
     private static final double PERCENTAGE = 0.9;
 
-    private static double getSupport(double usage, double price) {
+    public static double getSupport(double usage, double price) {
 
         double support = 0;
-
-        // TODO
-
+        price+=usage * price;
+        if (price>THRESHOLD) {
+            support=price * PERCENTAGE;
+        }
         return support;
     }
 
@@ -54,9 +57,12 @@ public class DailyPower {
     public static double computePowerSupport(double[] usage, double[] prices) {
 
         double support = 0;
+        for (int i = 0; i < usage.length && i<prices.length; i++) {
+            double oneprice=prices[i];
+            double oneusage=usage[i];
+            support+=getSupport(oneusage, oneprice);
 
-        // TODO
-
+        }
         return support;
     }
 
@@ -66,28 +72,32 @@ public class DailyPower {
     public static double computeNorgesPrice(double[] usage) {
 
         double price = 0;
-
-        // TODO
+        for (int i = 0; i < usage.length; i++) {
+            price+=usage[i] * NORGESPRIS_KWH;
+        }
 
         return price;
     }
 
-    // g) compute peak usage during a single day
+    // h) compute peak usage during a single day
     public static double findPeakUsage(double[] usage) {
 
         double temp_max = 0;
-
-        // TODO
-
+        for (int i = 0; i < usage.length; i++) {
+            if (usage[i]>temp_max) {
+                temp_max=usage[i];
+            }
+        }
         return temp_max;
     }
-
+    // i) compute peak usage during a single day
     public static double findAvgPower(double[] usage) {
 
         double average = 0;
-
-        // TODO
-
+        for (int i = 0; i < usage.length; i++) {
+                average+=usage[i];
+        }
+        average=average/usage.length;
         return average;
     }
 }

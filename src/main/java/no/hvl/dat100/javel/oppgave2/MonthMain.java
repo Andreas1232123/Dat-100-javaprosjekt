@@ -16,14 +16,35 @@ public class MonthMain {
         System.out.println("OPPGAVE 2");
         System.out.println("==============");
         System.out.println();
-
-        /*
-        TODO
-
-         Write code that tests the methods you implement in the MonthlyPower class
-         Remember to teste the methods as you implement them
-         Remember to also to check that you get the expected results
-         */
+        System.out.println("==============");
+        System.out.println("OPPGAVE a");
+        System.out.println("==============");
+        MonthlyPower.print_PowerUsage(power_usage_month);
+        System.out.println("==============");
+        System.out.println("OPPGAVE b");
+        System.out.println("==============");
+        MonthlyPower.print_PowerPrices(power_prices_month);
+        System.out.println("==============");
+        System.out.println("OPPGAVE c");
+        System.out.println("==============");
+        System.out.println(MonthlyPower.computePowerUsage(power_usage_month));
+        System.out.println("==============");
+        System.out.println("OPPGAVE d");
+        System.out.println("==============");
+        double threshold = 5000;
+        System.out.println(MonthlyPower.exceedThreshold(power_usage_month, threshold));
+        System.out.println("==============");
+        System.out.println("OPPGAVE e");
+        System.out.println("==============");
+        System.out.println(MonthlyPower.computeSpotPrice(power_usage_month, power_prices_month));
+        System.out.println("==============");
+        System.out.println("OPPGAVE f");
+        System.out.println("==============");
+        System.out.println(MonthlyPower.computePowerSupport(power_usage_month, power_prices_month));
+        System.out.println("==============");
+        System.out.println("OPPGAVE g");
+        System.out.println("==============");
+        System.out.println(MonthlyPower.computeNorgesPrice(power_usage_month));
 
     }
 }

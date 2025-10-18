@@ -25,7 +25,7 @@ public class Customer {
         return email;
     }
 
-    public int getCustomer_id() {
+    public int getCustomerId() {
         return customer_id;
     }
 
@@ -42,7 +42,7 @@ public class Customer {
         this.email = email;
     }
 
-    public void setCustomer_id(int customer_id) {
+    public void setCustomerId(int customer_id) {
         this.customer_id = customer_id;
     }
 
